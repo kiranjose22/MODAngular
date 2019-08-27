@@ -3,44 +3,41 @@
         <article class="card-body mx-auto" style="max-width: 500px;">
             <h4 class="card-title mt-3 text-center">Create Account</h4>
             <p class="text-center">Get started with your user account</p>
-            <form>
+            <form [formGroup]="registrationForm">
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
-                    <input name="" class="form-control" placeholder="Full name" type="text">
+                    <input formControlName="userName" class="form-control" placeholder="Full name" type="text">
                 </div>
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                     </div>
-                    <input name="" class="form-control" placeholder="Email address" type="email">
+                    <input formControlName="email" class="form-control" placeholder="Email address" type="email">
                 </div>
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
                     </div>
 
-                    <input name="" class="form-control" placeholder="Phone number" type="text">
+                    <input formControlName="phone" class="form-control" placeholder="Phone number" type="text">
                 </div>
-            
+
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="Create password" type="password">
+                    <input formControlName="password" class="form-control" placeholder="Create password" type="password">
                 </div>
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                    </div>
-                    <input class="form-control" placeholder="Repeat password" type="password">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
-                </div>
-                <p class="text-center">Have an account? <a href="login.html">Login</a> </p>
+                <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
+                <!-- <div class="form-group">
+
+                </div> -->
+                <p class="text-center">Have an account? <a routerLink="../login">Login</a> </p>
             </form>
+         
         </article>
+        {{registrationForm.value | json}}
     </div>
 </div>
