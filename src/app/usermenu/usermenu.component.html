@@ -1,0 +1,511 @@
+<div class="container">
+    <h2>Hello {{currentUser.userName}},</h2>
+    <ul class="nav nav-tabs">
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#search">Search Trainings</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#current">Current Trainings</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#completed">Completed Trainings</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="search" class="tab-pane fade show active">
+            <div class="container pt-3">
+                <!-- <form class="form-inline">
+                    <input class="form-control mr-sm-2" style="width: 30%" type="search"
+                        placeholder="Spring boot" aria-label="Search">
+                    <select class="form-control mr-sm-2">
+                        <option selected="">Select course duration</option>
+                        <option>1 month</option>
+                        <option>3 months</option>
+                        <option>6 months</option>
+                    </select>
+                    <span>from&nbsp;</span>
+                    <input class="form-control mr-sm-2" type="date" placeholder="select start date"
+                        aria-label="Search">
+                    <select class="form-control mr-sm-2" name="timeSlot">
+                        <option>-- Select time slot --</option>
+                        <option>10:00 AM - 12:00 PM</option>
+                        <option>11:00 AM - 01:00 PM</option>
+                        <option>02:00 PM - 04:00 PM</option>
+                        <option>03:00 PM - 05:00 PM</option>
+                        <option>06:00 PM - 08:00 PM</option>
+                        <option>09:00 PM - 11:00 PM</option>
+                        <option>10:00 PM - 12:00 PM</option>
+                    </select>
+
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form> -->
+                <b>Search results for 'Spring boot' training</b>
+                <!-- edit here to activate modal -->
+                <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Mentor Details</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <img src="images/person1.png" width="150px" height="150px"
+                                            class="rounded float-left" alt="">
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        Trainer: <br>
+                                        <b>Sam</b>
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        <span class="btn btn-secondary">
+                                            Experience <span class="badge badge-light">5 yrs</span>
+                                        </span>
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        Average rating:<br>
+                                        <span class="fa fa-star starred"></span>
+                                        <span class="fa fa-star starred"></span>
+                                        <span class="fa fa-star starred"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        <span class="btn btn-secondary">
+                                            Trainings<br>Completed <span class="badge badge-light">6</span>
+                                        </span>
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        <span class="btn btn-info">
+                                            Fee <span class="badge badge-light">&#8377;40,000</span>
+                                        </span>
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        <button type="button" class="btn btn-success">Propose Training</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Mentor Details</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <img src="images/person2.png" width="150px" height="150px"
+                                            class="rounded float-left" alt="">
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        Trainer: <br>
+                                        <b>Ema</b>
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        <span class="btn btn-secondary">
+                                            Experience <span class="badge badge-light">7 yrs</span>
+                                        </span>
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        Average rating:<br>
+                                        <span class="fa fa-star starred"></span>
+                                        <span class="fa fa-star starred"></span>
+                                        <span class="fa fa-star starred"></span>
+                                        <span class="fa fa-star starred"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        <span class="btn btn-secondary">
+                                            Trainings<br>Completed <span class="badge badge-light">10</span>
+                                        </span>
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        <span class="btn btn-info">
+                                            Fee <span class="badge badge-light">&#8377;45,000</span>
+                                        </span>
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        <button type="button" class="btn btn-success">Propose Training</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Mentor Details</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <img src="images/person3.png" width="150px" height="150px"
+                                            class="rounded float-left" alt="">
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        Trainer: <br>
+                                        <b>Jacob</b>
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        <span class="btn btn-secondary">
+                                            Experience <span class="badge badge-light">3 yrs</span>
+                                        </span>
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        Average rating:<br>
+                                        <span class="fa fa-star starred"></span>
+                                        <span class="fa fa-star starred"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        <span class="btn btn-secondary">
+                                            Trainings<br>Completed <span class="badge badge-light">4</span>
+                                        </span>
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        <span class="btn btn-info">
+                                            Fee <span class="badge badge-light">&#8377;35,000</span>
+                                        </span>
+                                    </div>
+                                    <div class="col text-center pt-5">
+                                        <button type="button" class="btn btn-success">Propose Training</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-2" data-toggle="modal" data-target="#exampleModal1">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <img src="images/person1.png" width="150px" height="150px"
+                                    class="rounded float-left" alt="">
+                            </div>
+                            <div class="col text-center pt-5">
+                                Trainer: <br>
+                                <b>Sam</b>
+                            </div>
+                          
+                            <div class="col text-center pt-5">
+                                Average rating:<br>
+                                <span class="fa fa-star starred"></span>
+                                <span class="fa fa-star starred"></span>
+                                <span class="fa fa-star starred"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="col text-center pt-5">
+                                <span class="btn btn-secondary">
+                                    Trainings<br>Completed <span class="badge badge-light">6</span>
+                                </span>
+                            </div>
+                           
+                            <div class="col text-center pt-5">
+                                <button type="button" class="btn btn-success">Propose Training</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-2" data-toggle="modal" data-target="#exampleModal2">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <img src="images/person2.png" width="150px" height="150px"
+                                    class="rounded float-left" alt="">
+                            </div>
+                            <div class="col text-center pt-5">
+                                Trainer: <br>
+                                <b>Ema</b>
+                            </div>
+                           
+                            <div class="col text-center pt-5">
+                                Average rating:<br>
+                                <span class="fa fa-star starred"></span>
+                                <span class="fa fa-star starred"></span>
+                                <span class="fa fa-star starred"></span>
+                                <span class="fa fa-star starred"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="col text-center pt-5">
+                                <span class="btn btn-secondary">
+                                    Trainings<br>Completed <span class="badge badge-light">10</span>
+                                </span>
+                            </div>
+                        
+                            <div class="col text-center pt-5">
+                                <button type="button" class="btn btn-success">Propose Training</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-2" data-toggle="modal" data-target="#exampleModal3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <img src="images/person3.png" width="150px" height="150px"
+                                    class="rounded float-left" alt="">
+                            </div>
+                            <div class="col text-center pt-5">
+                                Trainer: <br>
+                                <b>Jacob</b>
+                            </div>
+                          
+                            <div class="col text-center pt-5">
+                                Average rating:<br>
+                                <span class="fa fa-star starred"></span>
+                                <span class="fa fa-star starred"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                            <div class="col text-center pt-5">
+                                <span class="btn btn-secondary">
+                                    Trainings<br>Completed <span class="badge badge-light">4</span>
+                                </span>
+                            </div>
+                           
+                            <div class="col text-center pt-5">
+                                <button type="button" class="btn btn-success">Propose Training</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="current" class="tab-pane fade">
+            <div class="row">
+                <div class="col card mt-2">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <img src="images/java.png" width="150px" height="150px"
+                                    class="rounded float-left" alt="">
+                            </div>
+                            <div class="col text-center pt-3">
+                                Course: <br>
+                                <b>Java Fundamentals</b> <br>
+                                Trainer: <br>
+                                <b>Eric</b> <br>
+                                Status: <br>
+                                <span class="badge badge-info">Proposed</span>
+                                <span class="badge badge-warning">Awaiting Confirmation</span>
+                            </div>
+                            <div class="col text-center pt-5">
+                                <a class="btn btn-secondary disabled">Make payment</a>
+                                <br><br>
+                                <button type="button" class="btn btn-danger">Cancel Course</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col card mt-2">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <img src="images/mysql.png" width="150px" height="150px"
+                                    class="rounded float-left" alt="">
+                            </div>
+                            <div class="col text-center pt-2">
+                                Course: <br>
+                                <b>MySQL</b> <br>
+                                Trainer: <br>
+                                <b>Joseph</b> <br>
+                                Status: <br>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                                        role="progressbar" aria-valuenow="63" aria-valuemin="0"
+                                        aria-valuemax="100" style="width: 63%">63%</div>
+                                </div> <br>
+                                <button type="button" class="btn btn-info" data-toggle="modal"
+                                    data-target="#exampleModal">
+                                    Update
+                                </button>
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Update Progress
+                                                </h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <input type="range" min="1" max="100" value="50" class="slider"
+                                                    id="myRange" style="width: 100%">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary"
+                                                    data-dismiss="modal">Update</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col text-center pt-2">
+                                <button type="button" class="btn btn-primary">Resume Course</button>
+                                <br> <br>
+                                <button type="button" class="btn btn-info">Rate trainer</button><br> <br>
+                                <button type="button" class="btn btn-danger">Cancel Course</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col card mt-2">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <img src="images/spring.png" width="150px" height="150px"
+                                    class="rounded float-left" alt="">
+                            </div>
+                            <div class="col text-center pt-3">
+                                Course: <br>
+                                <b>Spring</b> <br>
+                                Trainer: <br>
+                                <b>Ema</b> <br>
+                                Status: <br>
+                                <span class="badge badge-info">Proposal Confirmed</span>
+                                <span class="badge badge-info">Payment done</span>
+                            </div>
+                            <div class="col text-center pt-5">
+                                <button type="button" class="btn btn-success">Start Course</button>
+                                <br><br>
+                                <button type="button" class="btn btn-danger">Cancel Course</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col card mt-2">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <img src="images/angular.png" width="150px" height="150px"
+                                    class="rounded float-left" alt="">
+                            </div>
+                            <div class="col text-center pt-3">
+                                Course: <br>
+                                <b>Angular</b> <br>
+                                Trainer: <br>
+                                <b>Kevin</b> <br>
+                                Status: <br>
+                                <span class="badge badge-info">Proposal confirmed</span>
+                                <span class="badge badge-warning">Payment Pending</span>
+                            </div>
+                            <div class="col text-center pt-5">
+                                <button type="button" class="btn btn-success">Make payment</button>
+                                <br><br>
+                                <button type="button" class="btn btn-danger">Cancel Course</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 card mt-2">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <img src="images/css.png" width="150px" height="150px"
+                                    class="rounded float-left" alt="">
+                            </div>
+                            <div class="col text-center pt-3">
+                                Course: <br>
+                                <b>CSS</b> <br>
+                                Trainer: <br>
+                                <b>Immanuel</b> <br>
+                                Status: <br>
+                                <span class="badge badge-danger">Rejected</span>
+                            </div>
+                            <div class="col text-center pt-5">
+                                <button type="button" class="btn btn-primary">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="completed" class="tab-pane fade">
+            <div class="row">
+                <div class="col card mt-2">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <img src="images/html5.png" width="150px" height="150px"
+                                    class="rounded float-left" alt="">
+                            </div>
+                            <div class="col text-center pt-3">
+                                Course: <br>
+                                <b>HTML5</b> <br>
+                                Trainer: <br>
+                                <b>Ganesh</b> <br>
+                                <span class="badge badge-success">Completed on Aug 5, 2019</span>
+                            </div>
+                            <div class="col text-center pt-5">
+                                <button type="button" class="btn btn-primary">View Certificate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col card mt-2">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <img src="images/bootstrap.png" width="150px" height="150px"
+                                    class="rounded float-left" alt="">
+                            </div>
+                            <div class="col text-center pt-3">
+                                Course: <br>
+                                <b>Bootstrap</b> <br>
+                                Trainer: <br>
+                                <b>Sarfraz</b> <br>
+                                <span class="badge badge-success">Completed on Aug 13, 2019</span>
+                            </div>
+                            <div class="col text-center pt-5">
+                                <button type="button" class="btn btn-primary">View Certificate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

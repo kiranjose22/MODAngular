@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SignupUserComponent } from './signup-user/signup-user.component';
 import { SignupMentorComponent } from './signup-mentor/signup-mentor.component';
+import { UsermenuComponent } from './usermenu/usermenu.component';
+import { LoginprocessService } from './loginprocess.service';
 
 
 @NgModule({
@@ -20,14 +22,15 @@ import { SignupMentorComponent } from './signup-mentor/signup-mentor.component';
     routingComponents,
     PageNotFoundComponent,
     SignupUserComponent,
-    SignupMentorComponent
+    SignupMentorComponent,
+    UsermenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [LoginprocessService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

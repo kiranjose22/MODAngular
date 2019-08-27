@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SignupUserComponent } from './signup-user/signup-user.component';
 import { SignupMentorComponent } from './signup-mentor/signup-mentor.component';
+import { UsermenuComponent } from './usermenu/usermenu.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'signup-user', component: SignupUserComponent},
   {path: 'signup-mentor', component: SignupMentorComponent},
+  {path: 'user-menu', component: UsermenuComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 
@@ -22,4 +24,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomeComponent, LoginComponent,PageNotFoundComponent,SignupMentorComponent,SignupUserComponent]
+export const routingComponents = [HomeComponent, LoginComponent,PageNotFoundComponent,SignupMentorComponent,SignupUserComponent,UsermenuComponent]

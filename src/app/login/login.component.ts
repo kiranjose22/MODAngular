@@ -30,6 +30,9 @@ export class LoginComponent implements OnInit {
   authenticate(user) {
    if(!this.loginProcess.authenticate(user))
       this.wrong = true;
-    
+   else {
+     this.router.navigate(['/user-menu']);
+   }
+
   }
 }
