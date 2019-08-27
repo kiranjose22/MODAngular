@@ -1,5 +1,9 @@
 <div class="container pt-2">
-    <div class="card bg-light">
+    <div *ngIf="submitted" class="alert alert-success" role="alert">
+        Account Created !!
+    </div>
+    <div *ngIf="!submitted" class="card bg-light">
+        
         <article class="card-body mx-auto" style="max-width: 500px;">
             <h4 class="card-title mt-3 text-center">Create Account</h4>
             <p class="text-center">Get started with your user account</p>
@@ -28,7 +32,8 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input formControlName="password" class="form-control" placeholder="Create password" type="password">
+                    <input formControlName="password" class="form-control" placeholder="Create password"
+                        type="password">
                 </div>
                 <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
                 <!-- <div class="form-group">
@@ -36,8 +41,8 @@
                 </div> -->
                 <p class="text-center">Have an account? <a routerLink="../login">Login</a> </p>
             </form>
-         
+
         </article>
-        {{registrationForm.value | json}}
+        <!-- {{registrationForm.value | json}} -->
     </div>
 </div>

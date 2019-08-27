@@ -12,6 +12,7 @@ import { AdduserService } from '../adduser.service';
 export class SignupUserComponent implements OnInit {
 
   registrationForm
+  submitted = false;
   constructor(
     private addUserService: AdduserService
   ) {
@@ -29,8 +30,9 @@ export class SignupUserComponent implements OnInit {
   }
 
   addNew(user) {
-    window.alert('User added');
+    // window.alert('User added');
     this.addUserService.addNew(user);
+    this.submitted = true;
   }
 
 
