@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
+import {users} from '../users';
+
+import { AdduserService } from '../adduser.service';
 
 @Component({
   selector: 'app-signup-user',
@@ -9,7 +12,11 @@ import {FormGroup, FormControl} from '@angular/forms';
 export class SignupUserComponent implements OnInit {
 
   registrationForm
-  constructor() {
+  constructor(
+    private addUserService: AdduserService
+  ) {
+    
+    
     this.registrationForm = new FormGroup({
       userName : new FormControl(''),
       email : new FormControl(''),
@@ -19,6 +26,11 @@ export class SignupUserComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  addNew(user) {
+    window.alert('User added');
+    this.addUserService.addNew(user);
   }
 
 
