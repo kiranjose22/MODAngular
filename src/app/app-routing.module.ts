@@ -9,14 +9,16 @@ import { UsermenuComponent } from './usermenu/usermenu.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'index', component: HomeComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'signup-user', component: SignupUserComponent},
-  {path: 'signup-mentor', component: SignupMentorComponent},
-  {path: 'user-menu', component: UsermenuComponent},
-  {path: '**', component: PageNotFoundComponent}
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'index', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup-user', component: SignupUserComponent },
+  { path: 'signup-mentor', component: SignupMentorComponent },
+  {
+    path: 'user-menu', component: UsermenuComponent
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -24,4 +26,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomeComponent, LoginComponent,PageNotFoundComponent,SignupMentorComponent,SignupUserComponent,UsermenuComponent]
+export const routingComponents = [HomeComponent, LoginComponent, PageNotFoundComponent, SignupMentorComponent, SignupUserComponent, UsermenuComponent]

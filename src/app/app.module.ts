@@ -12,6 +12,7 @@ import { SignupUserComponent } from './signup-user/signup-user.component';
 import { SignupMentorComponent } from './signup-mentor/signup-mentor.component';
 import { UsermenuComponent } from './usermenu/usermenu.component';
 import { LoginprocessService } from './loginprocess.service';
+import { NavbarUserComponent } from './navbar-user/navbar-user.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { LoginprocessService } from './loginprocess.service';
     PageNotFoundComponent,
     SignupUserComponent,
     SignupMentorComponent,
-    UsermenuComponent
+    UsermenuComponent,
+    NavbarUserComponent
   ],
   imports: [
     BrowserModule,
@@ -33,4 +35,5 @@ import { LoginprocessService } from './loginprocess.service';
   providers: [LoginprocessService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

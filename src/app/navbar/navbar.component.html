@@ -1,3 +1,4 @@
+<div *ngIf="LoggedInUser == 'guest'">
 <div class="bg-dark pt-2 pb-2">
     <div class="row mx-3">
         <div class="col">
@@ -10,7 +11,7 @@
                     <a class="nav-link active" routerLink="">Home</a>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item"  >
                     <a class="nav-link text-white"  routerLink="/login">Login</a>
                 </li>
                 <li class="nav-item dropdown">
@@ -22,6 +23,28 @@
                     </div>
                 </li>
 
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<div *ngIf="LoggedInUser == 'user'" class="bg-dark pt-2 pb-2">
+    <div class="row mx-3">
+        <div class="col">
+            <a class="navbar-brand px-5 text-white" routerLink="/user-menu"><i class="fa fa-graduation-cap"></i> Mentor On
+                Demand</a>
+        </div>
+        <div class="col mx-3 ">
+            <ul class="nav nav-pills justify-content-end text-white">
+               
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" >Notifications <span
+                            class="badge badge-light">0</span></a>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link text-white btn btn-info"  (click)="logout()">Logout</button>
+                </li>
             </ul>
         </div>
     </div>
