@@ -13,6 +13,7 @@ import { SignupMentorComponent } from './signup-mentor/signup-mentor.component';
 import { UsermenuComponent } from './usermenu/usermenu.component';
 import { LoginprocessService } from './loginprocess.service';
 import { NavbarUserComponent } from './navbar-user/navbar-user.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { NavbarUserComponent } from './navbar-user/navbar-user.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   providers: [LoginprocessService],

@@ -4,13 +4,13 @@
         "trainer": "Ganesh",
         "completedOn": "Aug 5, 2019",
         "certificateUrl": "",
-        "logoUrl": ""
+        "logoUrl": "assets/html5.png"
     },
     {
         "course": "Bootstrap",
         "trainer": "Sarfraz",
         "completedOn": "Aug 13, 2019",
         "certificateUrl": "",
-        "logoUrl": ""
+        "logoUrl": "assets/bootstrap.png"
     }
 ]

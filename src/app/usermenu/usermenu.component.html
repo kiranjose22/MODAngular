@@ -306,31 +306,8 @@
             </div>
         </div>
         <div id="current" class="tab-pane fade">
-            <div class="row">
-                <div class="col card mt-2">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <img src="images/java.png" width="150px" height="150px"
-                                    class="rounded float-left" alt="">
-                            </div>
-                            <div class="col text-center pt-3">
-                                Course: <br>
-                                <b>Java Fundamentals</b> <br>
-                                Trainer: <br>
-                                <b>Eric</b> <br>
-                                Status: <br>
-                                <span class="badge badge-info">Proposed</span>
-                                <span class="badge badge-warning">Awaiting Confirmation</span>
-                            </div>
-                            <div class="col text-center pt-5">
-                                <a class="btn btn-secondary disabled">Make payment</a>
-                                <br><br>
-                                <button type="button" class="btn btn-danger">Cancel Course</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row" *ngFor="let data of currentUserData">
+                
                 <div class="col card mt-2">
                     <div class="card-body">
                         <div class="row">
@@ -340,14 +317,14 @@
                             </div>
                             <div class="col text-center pt-2">
                                 Course: <br>
-                                <b>MySQL</b> <br>
+                                <b>{{data.course}}</b> <br>
                                 Trainer: <br>
-                                <b>Joseph</b> <br>
+                                <b>{{data.trainer}}</b> <br>
                                 Status: <br>
-                                <div class="progress">
+                                <div class="progress" *ngIf="data.status =='Ongoing'">
                                     <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                                        role="progressbar" aria-valuenow="63" aria-valuemin="0"
-                                        aria-valuemax="100" style="width: 63%">63%</div>
+                                        role="progressbar" aria-valuenow="data.completion" aria-valuemin="0"
+                                        aria-valuemax="100" [style.width]="data.completion">{{data.completion}}</div>
                                 </div> <br>
                                 <button type="button" class="btn btn-info" data-toggle="modal"
                                     data-target="#exampleModal">
@@ -389,95 +366,25 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col card mt-2">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <img src="images/spring.png" width="150px" height="150px"
-                                    class="rounded float-left" alt="">
-                            </div>
-                            <div class="col text-center pt-3">
-                                Course: <br>
-                                <b>Spring</b> <br>
-                                Trainer: <br>
-                                <b>Ema</b> <br>
-                                Status: <br>
-                                <span class="badge badge-info">Proposal Confirmed</span>
-                                <span class="badge badge-info">Payment done</span>
-                            </div>
-                            <div class="col text-center pt-5">
-                                <button type="button" class="btn btn-success">Start Course</button>
-                                <br><br>
-                                <button type="button" class="btn btn-danger">Cancel Course</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col card mt-2">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <img src="images/angular.png" width="150px" height="150px"
-                                    class="rounded float-left" alt="">
-                            </div>
-                            <div class="col text-center pt-3">
-                                Course: <br>
-                                <b>Angular</b> <br>
-                                Trainer: <br>
-                                <b>Kevin</b> <br>
-                                Status: <br>
-                                <span class="badge badge-info">Proposal confirmed</span>
-                                <span class="badge badge-warning">Payment Pending</span>
-                            </div>
-                            <div class="col text-center pt-5">
-                                <button type="button" class="btn btn-success">Make payment</button>
-                                <br><br>
-                                <button type="button" class="btn btn-danger">Cancel Course</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6 card mt-2">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <img src="images/css.png" width="150px" height="150px"
-                                    class="rounded float-left" alt="">
-                            </div>
-                            <div class="col text-center pt-3">
-                                Course: <br>
-                                <b>CSS</b> <br>
-                                Trainer: <br>
-                                <b>Immanuel</b> <br>
-                                Status: <br>
-                                <span class="badge badge-danger">Rejected</span>
-                            </div>
-                            <div class="col text-center pt-5">
-                                <button type="button" class="btn btn-primary">Remove</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+           
         </div>
         <div id="completed" class="tab-pane fade">
-            <div class="row">
+            <!-- {{currentUserData[1].course}} -->
+            <div class="row" *ngFor="let data of completedUserData">
                 <div class="col card mt-2">
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <img src="images/html5.png" width="150px" height="150px"
+                                <img src="{{data.logoUrl}}" width="150px" height="150px"
                                     class="rounded float-left" alt="">
                             </div>
                             <div class="col text-center pt-3">
                                 Course: <br>
-                                <b>HTML5</b> <br>
+                                <b>{{data.course}}</b> <br>
                                 Trainer: <br>
-                                <b>Ganesh</b> <br>
-                                <span class="badge badge-success">Completed on Aug 5, 2019</span>
+                                <b>{{data.trainer}}</b> <br>
+                                <span class="badge badge-success">Completed on {{data.completedOn}}</span>
                             </div>
                             <div class="col text-center pt-5">
                                 <button type="button" class="btn btn-primary">View Certificate</button>
@@ -485,26 +392,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col card mt-2">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <img src="images/bootstrap.png" width="150px" height="150px"
-                                    class="rounded float-left" alt="">
-                            </div>
-                            <div class="col text-center pt-3">
-                                Course: <br>
-                                <b>Bootstrap</b> <br>
-                                Trainer: <br>
-                                <b>Sarfraz</b> <br>
-                                <span class="badge badge-success">Completed on Aug 13, 2019</span>
-                            </div>
-                            <div class="col text-center pt-5">
-                                <button type="button" class="btn btn-primary">View Certificate</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>

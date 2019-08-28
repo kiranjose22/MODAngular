@@ -10,21 +10,30 @@ import { DataReaderService } from '../data-reader.service';
 export class UsermenuComponent implements OnInit {
 
   currentUser
+  currentUserData
+  completedUserData
   loggedin
   
   constructor(
     private loginProcess: LoginprocessService,
     // private navbar: NavbarComponent
     private dataReader: DataReaderService
-    ) { }
+    ) { 
+      this.dataReader.getJSON('completed-trainings.json').subscribe(data => {
+        console.log(data);
+        this.completedUserData = data
+      });
+      this.dataReader.getJSON('current-trainings.json').subscribe(data => {
+        console.log(data);
+        this.currentUserData = data
+      });
+    }
   
 
   ngOnInit() {
     this.currentUser = this.loginProcess.getCurrentUser();
     this.loggedin = this.loginProcess.loggedin;
-    this.dataReader.getJSON().subscribe(data => {
-      console.log(data);
-    })
+    
     // this.navbar.ngOnInit();
   }
 
