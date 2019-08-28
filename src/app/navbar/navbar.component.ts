@@ -9,12 +9,14 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   LoggedInUser = 'guest';
+  currentUrl = '/home'
   constructor(
     private loginProcess: LoginprocessService,
     private route:Router
   ) { 
   route.events.subscribe(event =>{
     if(event instanceof NavigationEnd){
+      this.currentUrl = event.url
       if(event.url == '/user-menu'){
         this.LoggedInUser = 'user';
       }else if(event.url == '/home'){
@@ -27,6 +29,7 @@ export class NavbarComponent implements OnInit {
   // loggedin
   ngOnInit() {
     // this.loggedin = this.loginProcess.loggedin;
+    this.currentUrl = '/home'
   }
 
   logout() {

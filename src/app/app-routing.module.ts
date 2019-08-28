@@ -9,8 +9,9 @@ import { UsermenuComponent } from './usermenu/usermenu.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'index', component: HomeComponent },
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
+  // { path: 'index', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup-user', component: SignupUserComponent },
