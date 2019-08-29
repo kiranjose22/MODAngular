@@ -1,6 +1,6 @@
 <div class="container pt-2">
     <div *ngIf="submitted" class="alert alert-success" role="alert">
-        Account Created !!
+        Account Created !! <a routerLink="../login">Login</a>
     </div>
     <div *ngIf="!submitted" class="card bg-light">
         <article class="card-body mx-auto" style="max-width: 500px;">
@@ -263,6 +263,6 @@
             </form>
         </article>
        
-        {{registrationForm.value | json}}
+        <!-- {{registrationForm.value | json}} -->
     </div>
 </div>

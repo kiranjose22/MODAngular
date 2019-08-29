@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
   route.events.subscribe(event =>{
     if(event instanceof NavigationEnd){
       this.currentUrl = event.url
-      if(event.url == '/user-menu'){
+      if(event.url == '/user-menu'||event.url == '/trainer-menu'){
         this.LoggedInUser = 'user';
       }else if(event.url == '/home'){
         this.LoggedInUser = 'guest';

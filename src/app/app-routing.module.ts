@@ -7,6 +7,7 @@ import { SignupUserComponent } from './signup-user/signup-user.component';
 import { SignupMentorComponent } from './signup-mentor/signup-mentor.component';
 import { UsermenuComponent } from './usermenu/usermenu.component';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { TrainermenuComponent } from './trainermenu/trainermenu.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,9 @@ const routes: Routes = [
   { path: 'search-result', component: SearchResultComponent },
   {
     path: 'user-menu', component: UsermenuComponent
+  },
+  {
+    path: 'trainer-menu', component: TrainermenuComponent
   },
   { path: '**', component: PageNotFoundComponent }
 ];

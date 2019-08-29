@@ -13,13 +13,7 @@ export const users = [
     password: 'b',
     role: 'user'
   },
-  {
-    userName: 'c',
-    email: 'c',
-    phone: 'c',
-    password: 'c',
-    role: 'trainer'
-  },
+ 
   {
     userName: 'a',
     email: 'a',
