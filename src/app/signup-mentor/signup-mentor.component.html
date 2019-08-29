@@ -1,27 +1,30 @@
 <div class="container pt-2">
-    <div class="card bg-light">
+    <div *ngIf="submitted" class="alert alert-success" role="alert">
+        Account Created !!
+    </div>
+    <div *ngIf="!submitted" class="card bg-light">
         <article class="card-body mx-auto" style="max-width: 500px;">
             <h4 class="card-title mt-3 text-center">Create Account</h4>
             <p class="text-center">Get started with your trainer account</p>
-            <!-- <form>
+            <form [formGroup]="registrationForm" (ngSubmit)="addNew(registrationForm.value)">
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
-                    <input name="" class="form-control" placeholder="Full name" type="text">
+                    <input formControlName="userName" class="form-control" placeholder="Full name" type="text">
                 </div>
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                     </div>
-                    <input name="" class="form-control" placeholder="Email address" type="email">
+                    <input formControlName="email" class="form-control" placeholder="Email address" type="email">
                 </div>
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
                     </div>
 
-                    <input name="" class="form-control" placeholder="Phone number" type="text">
+                    <input formControlName="phone" class="form-control" placeholder="Phone number" type="text">
                 </div>
 
                 <div class="form-group input-group">
@@ -29,14 +32,16 @@
                         <span class="input-group-text"> <i class="fa fa-clock"></i> </span>
                     </div>
 
-                    <input name="" class="form-control" placeholder="Experience(in years)" type="number">
-                </div> -->
-                <!-- <div class="form-group">
+                    <input formControlName="experience" class="form-control" placeholder="Experience(in years)"
+                        type="number">
+                </div>
+                <div class="form-group">
 
 
                     <label for="exampleFormControlSelect3">Time Zone</label>
-                    <select single class="form-control " id="exampleFormControlSelect3">
-                       
+                    <select formControlName="timezone" single class="form-control " id="exampleFormControlSelect3">
+                        <!-- Time Zone span -->
+                        <option value="undefined">-- Select Time Zone --</option>
                         <option timeZoneId="1" gmtAdjustment="GMT-12:00" useDaylightTime="0" value="-12">
                             (GMT-12:00) International Date Line West</option>
                         <option timeZoneId="2" gmtAdjustment="GMT-11:00" useDaylightTime="0" value="-11">
@@ -203,39 +208,43 @@
                             (GMT+13:00) Nuku'alofa</option>
                     </select>
                 </div>
-                <select class="form-control mr-sm-2" name="timeSlot">
-                    <option>-- Select preferred time slot --</option>
-                    <option>10:00 AM - 12:00 PM</option>
-                    <option>11:00 AM - 01:00 PM</option>
-                    <option>02:00 PM - 04:00 PM</option>
-                    <option>03:00 PM - 05:00 PM</option>
-                    <option>06:00 PM - 08:00 PM</option>
-                    <option>09:00 PM - 11:00 PM</option>
-                    <option>10:00 PM - 12:00 PM</option>
+                <select formControlName="timeslot" class="form-control mr-sm-2" name="timeSlot">
+                    <option value="undefined">-- Select preferred time slot --</option>
+                    <option value="1">10:00 AM - 12:00 PM</option>
+                    <option value="2">11:00 AM - 01:00 PM</option>
+                    <option value="3">02:00 PM - 04:00 PM</option>
+                    <option value="4">03:00 PM - 05:00 PM</option>
+                    <option value="5">06:00 PM - 08:00 PM</option>
+                    <option value="6">09:00 PM - 11:00 PM</option>
+                    <option value="7">10:00 PM - 12:00 PM</option>
                 </select> <br>
                 <div class="form-group" id="matrial-type">
                     <label class="theme-color-5">Material Type</label> <br>
-                    <input type="checkbox" id="matrial-type-video" class=" form-check-inline mr-2 ml-2" min="0">
+                    <input formControlName="videos" type="checkbox" value="video" id="matrial-type-video"
+                        class=" form-check-inline mr-2 ml-2" min="0">
                     <label for="matrial-type-video">Videos</label>
-                    <input type="checkbox" id="matrial-type-blog" class=" form-check-inline mr-2 ml-2" min="0">
+                    <input formControlName="blogs" type="checkbox"  value="blog" id="matrial-type-blog"
+                        class=" form-check-inline mr-2 ml-2" min="0">
                     <label for="matrial-type-blog">Blog</label>
-                    <input type="checkbox" id="matrial-type-ppt" class=" form-check-inline mr-2 ml-2" min="0">
+                    <input formControlName="ppts" type="checkbox"  value="ppts" id="matrial-type-ppt"
+                        class=" form-check-inline mr-2 ml-2" min="0">
                     <label for="matrial-type-ppt">PPTs</label>
-                    <input type="checkbox" id="matrial-type-demo" class=" form-check-inline mr-2 ml-2" min="0">
+                    <input formControlName="demos" type="checkbox"  value="demos" id="matrial-type-demo"
+                        class=" form-check-inline mr-2 ml-2" min="0">
                     <label for="matrial-type-demo">Demos</label>
                 </div>
                 <div class="form-group">
                     <label for="profile-url" class="theme-color-5">LinkedIn Profile (URL)</label>
-                    <input type="text" class="form-control" id="profile-url" min="0">
+                    <input formControlName="linkedin" type="text" class="form-control" id="profile-url" min="0">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect2">Skills</label>
-                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                        <option>Spring</option>
-                        <option>Angular</option>
-                        <option>Git</option>
-                        <option>Core Java</option>
-                        <option>Python</option>
+                    <select formControlName="skills" multiple class="form-control" id="exampleFormControlSelect2">
+                        <option value="Spring">Spring</option>
+                        <option value="Angular">Angular</option>
+                        <option value="Git">Git</option>
+                        <option value="Core Java">Core Java</option>
+                        <option value="Python">Python</option>
                     </select>
                 </div>
 
@@ -243,19 +252,17 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="Create password" type="password">
+                    <input formControlName="password" class="form-control" placeholder="Create password"
+                        type="password">
                 </div>
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                    </div>
-                    <input class="form-control" placeholder="Repeat password" type="password">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
-                </div>
-                <p class="text-center">Have an account? <a href="login.html">Login</a> </p>
-            </form> -->
+                <input type="hidden" formControlName="role" class="form-control">
+
+                <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
+
+                <p class="text-center">Have an account? <a routerLink="../login">Login</a> </p>
+            </form>
         </article>
+       
+        {{registrationForm.value | json}}
     </div>
 </div>

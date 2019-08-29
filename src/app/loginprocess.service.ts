@@ -18,7 +18,7 @@ export class LoginprocessService {
   authenticate(user) {
     this.flag = false;
     for (let i of users) {
-      if (i.email === user.email && i.password === user.password) {
+      if (i.email === user.email && i.password === user.password && i.role===user.role) {
         console.log("Login success");
         this.flag = true;
         this.currentUser = i;

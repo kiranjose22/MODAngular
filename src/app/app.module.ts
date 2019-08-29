@@ -15,6 +15,7 @@ import { LoginprocessService } from './loginprocess.service';
 import { NavbarUserComponent } from './navbar-user/navbar-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { TrainermenuComponent } from './trainermenu/trainermenu.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { SearchResultComponent } from './search-result/search-result.component';
     SignupMentorComponent,
     UsermenuComponent,
     NavbarUserComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    TrainermenuComponent
   ],
   imports: [
     BrowserModule,

@@ -19,7 +19,9 @@ export class LoginComponent implements OnInit {
       
       email : new FormControl(''),
      
-      password : new FormControl('')
+      password : new FormControl(''),
+
+      role : new FormControl('undefined')
     });
 
   }
