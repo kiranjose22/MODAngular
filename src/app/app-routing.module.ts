@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SignupUserComponent } from './signup-user/signup-user.component';
 import { SignupMentorComponent } from './signup-mentor/signup-mentor.component';
 import { UsermenuComponent } from './usermenu/usermenu.component';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup-user', component: SignupUserComponent },
   { path: 'signup-mentor', component: SignupMentorComponent },
+  { path: 'search-result', component: SearchResultComponent },
   {
     path: 'user-menu', component: UsermenuComponent
   },
@@ -27,4 +29,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomeComponent, LoginComponent, PageNotFoundComponent, SignupMentorComponent, SignupUserComponent, UsermenuComponent]
+export const routingComponents = [HomeComponent, LoginComponent, PageNotFoundComponent, SignupMentorComponent, SignupUserComponent, UsermenuComponent,SearchResultComponent]

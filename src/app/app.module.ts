@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule} from '@angular/forms'
+import { ReactiveFormsModule, FormsModule} from '@angular/forms'
 
 import { AppRoutingModule , routingComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { UsermenuComponent } from './usermenu/usermenu.component';
 import { LoginprocessService } from './loginprocess.service';
 import { NavbarUserComponent } from './navbar-user/navbar-user.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchResultComponent } from './search-result/search-result.component';
 
 
 @NgModule({
@@ -26,13 +27,15 @@ import { HttpClientModule } from '@angular/common/http';
     SignupUserComponent,
     SignupMentorComponent,
     UsermenuComponent,
-    NavbarUserComponent
+    NavbarUserComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [LoginprocessService],
   bootstrap: [AppComponent]

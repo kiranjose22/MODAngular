@@ -2,9 +2,9 @@
     <div class="row">
         <div class="col">
             <h2><br><br>Welcome to <br>Mentor On Demand <br><br></h2>
-            <!-- <form class="form-inline">
-                <input class="form-control mr-sm-2" style="width: 100%" type="search"
-                    placeholder="Search for courses" aria-label="Search"> <br> <br>
+            <form class="form-inline" [formGroup]="searchForm">
+                <input class="form-control mr-sm-2" style="width: 100%" type="search" placeholder="Search for courses"
+                    aria-label="Search"> <br> <br>
                 <select class="form-control mr-sm-2">
                     <option selected="">Select course duration</option>
                     <option>1 month</option>
@@ -12,8 +12,7 @@
                     <option>6 months</option>
                 </select>
                 <span>from&nbsp;</span>
-                <input class="form-control mr-sm-2" type="date" placeholder="select start date"
-                    aria-label="Search">
+                <input class="form-control mr-sm-2" type="date" placeholder="select start date" aria-label="Search">
                 <select class="form-control mr-sm-2" name="timeSlot">
                     <option>-- Select time slot --</option>
                     <option>10:00 AM - 12:00 PM</option>
@@ -24,8 +23,8 @@
                     <option>09:00 PM - 11:00 PM</option>
                     <option>10:00 PM - 12:00 PM</option>
                 </select>
-                <a class="btn btn-outline-success my-2 my-sm-0" href="search-result.html">Search</a>
-            </form> -->
+                <button class="btn btn-outline-success my-2 my-sm-0" (click)="search()" >Search</button>
+            </form>
 
         </div>
         <div class="col">
@@ -34,4 +33,3 @@
         </div>
     </div>
 </div>
-

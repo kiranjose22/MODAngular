@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  searchForm
+  constructor(
+    private route: Router
+  ) {
+
+    this.searchForm = new FormGroup({
+
+      course: new FormControl(''),
+
+      time: new FormControl('')
+    });
+
+  }
 
   ngOnInit() {
+  }
+
+  search() {
+    this.route.navigate(['/search-result']);
   }
 
 }
