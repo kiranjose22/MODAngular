@@ -8,6 +8,8 @@ import { SignupMentorComponent } from './signup-mentor/signup-mentor.component';
 import { UsermenuComponent } from './usermenu/usermenu.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { TrainermenuComponent } from './trainermenu/trainermenu.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 
 
 const routes: Routes = [
@@ -16,6 +18,8 @@ const routes: Routes = [
   // { path: 'index', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'admin-menu', component: AdminMenuComponent },
   { path: 'signup-user', component: SignupUserComponent },
   { path: 'signup-mentor', component: SignupMentorComponent },
   { path: 'search-result', component: SearchResultComponent },
@@ -33,4 +37,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomeComponent, LoginComponent, PageNotFoundComponent, SignupMentorComponent, SignupUserComponent, UsermenuComponent,SearchResultComponent]
+export const routingComponents = [HomeComponent, LoginComponent, PageNotFoundComponent, SignupMentorComponent, SignupUserComponent, UsermenuComponent,SearchResultComponent,AdminComponent, AdminMenuComponent ]

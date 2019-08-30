@@ -45,6 +45,12 @@ export const users = [
     ppts: true,
     demos: '',
     role: 'mentor'
+  },
+  {
+    userName: 'admin',
+    email: 'admin',
+    password: 'admin',
+    role: 'admin'
   }
 
 ];

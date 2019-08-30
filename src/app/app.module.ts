@@ -12,10 +12,12 @@ import { SignupUserComponent } from './signup-user/signup-user.component';
 import { SignupMentorComponent } from './signup-mentor/signup-mentor.component';
 import { UsermenuComponent } from './usermenu/usermenu.component';
 import { LoginprocessService } from './loginprocess.service';
-import { NavbarUserComponent } from './navbar-user/navbar-user.component';
+// import { NavbarUserComponent } from './navbar-user/navbar-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchResultComponent } from './search-result/search-result.component';
 import { TrainermenuComponent } from './trainermenu/trainermenu.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 
 
 @NgModule({
@@ -28,9 +30,11 @@ import { TrainermenuComponent } from './trainermenu/trainermenu.component';
     SignupUserComponent,
     SignupMentorComponent,
     UsermenuComponent,
-    NavbarUserComponent,
+    // NavbarUserComponent,
     SearchResultComponent,
-    TrainermenuComponent
+    TrainermenuComponent,
+    AdminComponent,
+    AdminMenuComponent
   ],
   imports: [
     BrowserModule,

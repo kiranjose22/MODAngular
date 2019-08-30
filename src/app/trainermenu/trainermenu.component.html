@@ -99,41 +99,28 @@
 
         </div>
         <div id="completed" class="tab-pane fade">
-            <div class="row">
+            <div class="row" *ngFor="let data of completedUserData">
                 <div class="col card mt-2">
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <img src="images/html5.png" width="150px" height="150px" class="rounded float-left"
+                                <img src="{{data.logoUrl}}" width="150px" height="150px" class="rounded float-left"
                                     alt="">
                             </div>
                             <div class="col text-center pt-3">
                                 Course: <br>
-                                <b>HTML5</b> <br>
-
-                                <span class="badge badge-success">Completed on Aug 5, 2019</span>
+                                <b>{{data.course}}</b> <br>
+                                Trainer: <br>
+                                <b>{{data.trainer}}</b> <br>
+                                <span class="badge badge-success">Completed on {{data.completedOn}}</span>
                             </div>
-
+                            <div class="col text-center pt-5">
+                                <button type="button" class="btn btn-primary">View Certificate</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col card mt-2">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <img src="images/bootstrap.png" width="150px" height="150px" class="rounded float-left"
-                                    alt="">
-                            </div>
-                            <div class="col text-center pt-3">
-                                Course: <br>
-                                <b>Bootstrap</b> <br>
 
-                                <span class="badge badge-success">Completed on Aug 13, 2019</span>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <div id="edit" class="tab-pane fade">
@@ -163,7 +150,7 @@
                     </div>
 
                     <input type="file" class="btn btn-secondary">
-                    
+
                     <button class="btn btn-primary" type="button">Upload</button>
 
 
