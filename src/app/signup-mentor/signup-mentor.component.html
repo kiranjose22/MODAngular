@@ -11,13 +11,26 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
-                    <input formControlName="userName" class="form-control" placeholder="Full name" type="text">
+                    <input
+                        [class.is-invalid]="registrationForm.get('userName').invalid && registrationForm.get('userName').touched"
+                        formControlName="userName" class="form-control" placeholder="Full name" type="text">
+                    <div class="input-group-append"
+                        [class.d-none]="registrationForm.get('userName').valid || registrationForm.get('userName').untouched">
+                        <span class="input-group-text text-danger" id=""><small>Name is required</small></span>
+                    </div>
                 </div>
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                     </div>
-                    <input formControlName="email" class="form-control" placeholder="Email address" type="email">
+                    <input
+                        [class.is-invalid]="registrationForm.get('email').invalid && registrationForm.get('email').touched"
+                        formControlName="email" class="form-control" placeholder="Email address" type="email">
+                    <div class="input-group-append"
+                        [class.d-none]="registrationForm.get('email').valid || registrationForm.get('email').untouched">
+                        <span class="input-group-text text-danger" id=""><small>A valid e-mail is
+                                required</small></span>
+                    </div>
                 </div>
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
@@ -223,13 +236,13 @@
                     <input formControlName="videos" type="checkbox" value="video" id="matrial-type-video"
                         class=" form-check-inline mr-2 ml-2" min="0">
                     <label for="matrial-type-video">Videos</label>
-                    <input formControlName="blogs" type="checkbox"  value="blog" id="matrial-type-blog"
+                    <input formControlName="blogs" type="checkbox" value="blog" id="matrial-type-blog"
                         class=" form-check-inline mr-2 ml-2" min="0">
                     <label for="matrial-type-blog">Blog</label>
-                    <input formControlName="ppts" type="checkbox"  value="ppts" id="matrial-type-ppt"
+                    <input formControlName="ppts" type="checkbox" value="ppts" id="matrial-type-ppt"
                         class=" form-check-inline mr-2 ml-2" min="0">
                     <label for="matrial-type-ppt">PPTs</label>
-                    <input formControlName="demos" type="checkbox"  value="demos" id="matrial-type-demo"
+                    <input formControlName="demos" type="checkbox" value="demos" id="matrial-type-demo"
                         class=" form-check-inline mr-2 ml-2" min="0">
                     <label for="matrial-type-demo">Demos</label>
                 </div>
@@ -252,17 +265,22 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input formControlName="password" class="form-control" placeholder="Create password"
-                        type="password">
+                    <input
+                        [class.is-invalid]="registrationForm.get('password').invalid && registrationForm.get('password').touched"
+                        formControlName="password" class="form-control" placeholder="Create password" type="password">
+                    <div class="input-group-append"
+                        [class.d-none]="registrationForm.get('password').valid || registrationForm.get('password').untouched">
+                        <span class="input-group-text text-danger" id=""><small>Password is required</small></span>
+                    </div>
                 </div>
                 <input type="hidden" formControlName="role" class="form-control">
 
-                <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
+                <button  [disabled]="!registrationForm.valid" type="submit" class="btn btn-primary btn-block"> Create Account </button>
 
                 <p class="text-center">Have an account? <a routerLink="../login">Login</a> </p>
             </form>
         </article>
-       
+
         <!-- {{registrationForm.value | json}} -->
     </div>
 </div>

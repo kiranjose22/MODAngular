@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl , FormArray } from '@angular/forms';
+import { FormGroup, FormControl , FormArray ,Validators} from '@angular/forms';
 import { users } from '../users';
 
 import { AdduserService } from '../adduser.service';
@@ -20,10 +20,10 @@ export class SignupMentorComponent implements OnInit {
   ) {
 
     this.registrationForm = new FormGroup({
-      userName: new FormControl(''),
-      email: new FormControl(''),
+      userName: new FormControl('',Validators.required),
+      email: new FormControl('',[Validators.required,Validators.email]),
       phone: new FormControl(''),
-      password: new FormControl(''),
+      password: new FormControl('',Validators.required),
       experience: new FormControl(''),
       timezone: new FormControl('undefined'),
       timeslot: new FormControl('undefined'),
