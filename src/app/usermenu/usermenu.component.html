@@ -13,9 +13,9 @@
             <app-search-result></app-search-result>
         </div>
         <div id="current" class="tab-pane fade">
-            <div class="row" *ngFor="let data of currentUserData">
+            <div class="row" *ngFor="let data of currentUserData; let thiscard = index" >
 
-                <div class="col card mt-2">
+                <div class="col card mt-2" #thiscard>
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
@@ -75,7 +75,7 @@
                                 <button *ngIf="data.status !='Rejected'" type="button" class="btn btn-danger m-2">Cancel
                                     Course</button>
                                 <button *ngIf="data.status =='Rejected'" type="button"
-                                    class="btn btn-primary m-2">Remove</button>
+                                    class="btn btn-primary m-2" (click)="thiscard.remove()">Remove</button>
                             </div>
                         </div>
                     </div>
