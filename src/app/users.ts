@@ -1,23 +1,23 @@
 export const users = [
   {
-    userName: 'a',
-    email: 'a',
-    phone: 'a',
+    userName: 'Alex',
+    email: 'a@a.com',
+    phone: '123',
     password: 'a',
     role: 'user'
   },
   {
-    userName: 'b',
-    email: 'b',
-    phone: 'b',
+    userName: 'Bob',
+    email: 'b@b.com',
+    phone: '321',
     password: 'b',
     role: 'user'
   },
  
   {
-    userName: 'a',
-    email: 'a',
-    phone: 'a',
+    userName: 'Adam',
+    email: 'a@a.com',
+    phone: '1111',
     password: 'a',
     experience: 1,
     timezone: '-12',
@@ -31,8 +31,8 @@ export const users = [
     role: 'mentor'
   },
   {
-    userName: 'b',
-    email: 'b',
+    userName: 'Ben',
+    email: 'b@b.com',
     phone: 'b',
     password: 'b',
     experience: 6,
@@ -47,8 +47,8 @@ export const users = [
     role: 'mentor'
   },
   {
-    userName: 'admin',
-    email: 'admin',
+    userName: 'Alvin[ADMIN]',
+    email: 'a@a.com',
     password: 'admin',
     role: 'admin'
   }
