@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginprocessService } from '../loginprocess.service';
 import { DataReaderService } from '../data-reader.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
 // import {NavbarComponent} from '../navbar/navbar.component'
 @Component({
   selector: 'app-usermenu',
@@ -14,6 +15,7 @@ export class UsermenuComponent implements OnInit {
   currentUserData
   completedUserData
   loggedin
+  // public progress
 
   constructor(
     private loginProcess: LoginprocessService,

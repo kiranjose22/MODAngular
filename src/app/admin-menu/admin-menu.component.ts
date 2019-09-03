@@ -25,4 +25,6 @@ export class AdminMenuComponent implements OnInit {
       this.route.navigate(['/home']);
   }
 
+  
+
 }

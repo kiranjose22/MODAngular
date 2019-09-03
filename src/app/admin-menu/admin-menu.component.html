@@ -29,7 +29,7 @@
                     </div>
 
                 </h5>
-                <div class="card-body">
+                <div class="card-body" #tech1>
                     <div class="row">
                         <div class="col text-center">
                             Java fundamentals
@@ -39,12 +39,13 @@
                         </div>
                         <div class="col text-center">
                             <button class="btn btn-primary m-2" type="button">Edit</button>
-                            <button class="btn btn-danger m-2" type="button">Remove</button>
+                            <button class="btn btn-danger m-2" type="button" (click)="tech1.remove()">Remove</button>
                         </div>
                     </div>
+                    <hr>
                 </div>
-                <hr>
-                <div class="card-body">
+
+                <div class="card-body" #tech2>
                     <div class="row">
                         <div class="col text-center">
                             Spring
@@ -54,12 +55,13 @@
                         </div>
                         <div class="col text-center">
                             <button class="btn btn-primary m-2" type="button">Edit</button>
-                            <button class="btn btn-danger m-2" type="button">Remove</button>
+                            <button class="btn btn-danger m-2" type="button" (click)="tech2.remove()">Remove</button>
                         </div>
                     </div>
+                    <hr>
                 </div>
-                <hr>
-                <div class="card-body">
+
+                <div class="card-body" #tech3>
                     <div class="row">
                         <div class="col text-center">
                             Angular
@@ -69,11 +71,12 @@
                         </div>
                         <div class="col text-center">
                             <button class="btn btn-primary m-2" type="button">Edit</button>
-                            <button class="btn btn-danger m-2" type="button">Remove</button>
+                            <button class="btn btn-danger m-2" type="button" (click)="tech3.remove()">Remove</button>
                         </div>
                     </div>
+                    <hr>
                 </div>
-                <hr>
+
                 <div class="card-body">
                     <div class="row">
                         <div class="col text-center align-center">
@@ -87,6 +90,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- <hr> -->
             </div>
 
 
