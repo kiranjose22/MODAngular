@@ -19,7 +19,11 @@ export class NavbarComponent implements OnInit {
       this.currentUrl = event.url
       if(event.url == '/user-menu'||event.url == '/trainer-menu'||event.url == '/admin-menu'){
         this.LoggedInUser = 'user';
-      }else if(event.url == '/home'){
+      }
+      // else if(event.url == '/home'){
+      //   this.LoggedInUser = 'guest';
+      // }
+      else {
         this.LoggedInUser = 'guest';
       }
     }

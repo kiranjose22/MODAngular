@@ -64,7 +64,7 @@ export class TrainermenuComponent implements OnInit {
     this.currentUser = this.loginProcess.getCurrentUser();
     this.loggedin = this.loginProcess.loggedin;
     if (!this.loggedin)
-      this.route.navigate(['/home']);
+      this.route.navigate(['/login']);
     this.registrationForm.patchValue(this.currentUser);
 
   }
