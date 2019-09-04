@@ -3,6 +3,7 @@ import { LoginprocessService } from '../loginprocess.service';
 import { DataReaderService } from '../data-reader.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
+
 // import {NavbarComponent} from '../navbar/navbar.component'
 @Component({
   selector: 'app-usermenu',
@@ -15,6 +16,7 @@ export class UsermenuComponent implements OnInit {
   currentUserData
   completedUserData
   loggedin
+  currentRating = 0;
   // public progress
 
   constructor(
@@ -41,6 +43,13 @@ export class UsermenuComponent implements OnInit {
       this.route.navigate(['/home']);
 
     // this.navbar.ngOnInit();
+  }
+
+  rate() {
+    if(this.currentRating == 5)
+      this.currentRating=0
+    else
+      this.currentRating = this.currentRating+1
   }
 
 }

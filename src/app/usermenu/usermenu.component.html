@@ -13,8 +13,34 @@
             <app-search-result></app-search-result>
         </div>
         <div id="current" class="tab-pane fade">
-            <div class="row" *ngFor="let data of currentUserData; let thiscard = index" >
+            <div class="row" *ngFor="let data of currentUserData; let thiscard = index">
+                <div *ngIf="data.status =='Ongoing'" class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Update Progress
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <input [(ngModel)]="data.completion" type="range" min="0" max="100"
+                                    class="form-control-range" class="slider" id="myRange" style="width: 100%">
 
+
+                                <div class="text-center">
+                                    <span class=" badge badge-info">{{data.completion}}%</span>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col card mt-2" #thiscard>
                     <div class="card-body">
                         <div class="row">
@@ -33,49 +59,37 @@
                                 <div class="progress" *ngIf="data.status =='Ongoing'">
                                     <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
                                         role="progressbar" aria-valuenow="data.completion" aria-valuemin="0"
-                                        aria-valuemax="100" [style.width]="data.completion">{{data.completion}}</div>
+                                        aria-valuemax="100" [style.width]="data.completion+'%'">{{data.completion}}%
+                                    </div>
                                 </div> <br>
                                 <button *ngIf="data.status =='Ongoing'" type="button" class="btn btn-info"
                                     data-toggle="modal" data-target="#exampleModal">
                                     Update
                                 </button>
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Update Progress
-                                                </h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <input type="range" min="1" max="100" value="50" class="slider"
-                                                    id="myRange" style="width: 100%">
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary"
-                                                    data-dismiss="modal">Update</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="col text-center pt-2">
                                 <!-- <button *ngIf="data.status =='Ongoing'" type="button" class="btn btn-primary">Go to Course</button>
                                 <br> <br> -->
                                 <button *ngIf="data.status =='Payment Pending'" type="button"
                                     class="btn btn-success m-2">Make payment</button><br>
-                                <button *ngIf="data.status =='Ongoing'" type="button" class="btn btn-info m-2">Rate
-                                    trainer</button><br>
+                                <!-- <button *ngIf="data.status =='Ongoing'" type="button" class="btn btn-info m-2">Rate
+                                    trainer</button><br> -->
+                                <!-- <ngb-rating [(ngModel)]="currentRate"></ngb-rating>
+                                <hr>
+                                <pre>Rate: <b>{{currentRate}}</b></pre> -->
+                                <div  *ngIf="data.status =='Ongoing'" class="text-center m-2" (click)="rate()">
+                                    Rate Trainer<br>
+                                    <span class="fa fa-star" [ngClass]="{'starred': currentRating >='1'}"></span>
+                                    <span class="fa fa-star" [ngClass]="{'starred': currentRating >='2'}"></span>
+                                    <span class="fa fa-star" [ngClass]="{'starred': currentRating >='3'}"></span>
+                                    <span class="fa fa-star" [ngClass]="{'starred': currentRating >='4'}"></span>
+                                    <span class="fa fa-star" [ngClass]="{'starred': currentRating >='5'}"></span>
+                                </div>
                                 <button *ngIf="data.status !='Rejected'" type="button" class="btn btn-danger m-2">Cancel
                                     Course</button>
-                                <button *ngIf="data.status =='Rejected'" type="button"
-                                    class="btn btn-primary m-2" (click)="thiscard.remove()">Remove</button>
+                                <button *ngIf="data.status =='Rejected'" type="button" class="btn btn-primary m-2"
+                                    (click)="thiscard.remove()">Remove</button>
                             </div>
                         </div>
                     </div>
